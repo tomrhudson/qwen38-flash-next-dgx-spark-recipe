@@ -1,0 +1,18 @@
+name: public-safety
+
+on:
+  push:
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  audit:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Reject secrets, private topology, weights, and large artifacts
+        run: python3 scripts/audit_public_tree.py
+      - name: Validate shell syntax
+        run: bash -n start.sh stop.sh

@@ -1,0 +1,36 @@
+# Local configuration and credentials
+.env
+.env.*
+!.env.example
+
+# Runtime state
+.probe/
+.patch/
+.cache/
+.serve.log
+.sglang.log
+.sglang-worker.log
+.download.log
+*.pid
+*.bak
+
+# Model weights and common model-cache layouts
+models/
+hub/
+snapshots/
+blobs/
+*.safetensors
+*.gguf
+*.ckpt
+*.pt
+*.pth
+*.onnx
+pytorch_model*.bin
+model*.bin
+
+# Python/editor noise
+__pycache__/
+*.py[cod]
+.DS_Store
+.idea/
+.vscode/
